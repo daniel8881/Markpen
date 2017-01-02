@@ -14,7 +14,7 @@ class PensList extends Component {
       const url = `/pens/${pen._id}`;
       return (
         <li className='list-group-item' key={pen._id}>
-          <Link to={url}> {pen._id}</Link>
+          <Link to={url}> {pen.title}</Link>
           <span className='pull-right'>
             <button
               className='btn btn-danger'

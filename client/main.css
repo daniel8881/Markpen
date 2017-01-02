@@ -1,8 +1,25 @@
-/* CSS declarations go here */
+/* gloabl */
+a {
+  text-decoration: none;
+}
+
+/* accounts */
+
 #login-buttons {
+  text-decoration: none;
   margin: 18px;
   font-size: 14px;
 }
+
+#login-buttons:hover {
+  text-decoration: none;
+}
+
+.login {
+  margin-right: 65px;
+}
+
+
 
 .list-group-item {
   height: 55px;

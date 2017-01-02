@@ -20,12 +20,13 @@ class Header extends Component {
         </div>
         <ul className='nav navbar-nav'>
           <li>
-            <Accounts />
-          </li>
-          <li>
             <a href="#" onClick={this.onPenClick.bind(this)}>Create Pen</a>
           </li>
         </ul>
+        <ul className='nav nav-pills pull-right login'>
+          <Accounts />
+        </ul>
+        
       </nav>
     )
   }

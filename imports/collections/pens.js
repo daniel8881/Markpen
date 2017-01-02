@@ -9,12 +9,17 @@ Meteor.methods({
       createdAt: new Date(),
       content: '',
       sharedWith: [],
-      ownerId: this.userId
+      ownerId: this.userId,
+      title: ''
     });
   },
 
   'pens.remove': function(pen) {
     return Pens.remove(pen);
+  },
+
+  'pens.updateTitle': function(pen, newTitle) {
+    return Pens.update(pen._id, { $set: { title: newTitle }});
   },
 
   'pens.update': function(pen, newContent) {

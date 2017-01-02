@@ -10,7 +10,7 @@ import Home from './components/home';
 const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={App}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={PensList} />
       <Route path='pens/:penId' component={PensMain} />
     </Route>
   </Router>

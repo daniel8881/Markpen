@@ -5,6 +5,7 @@ class Home extends Component {
     return (
       <div className='home'>
         homepage
+        <i class="fa fa-address-book" aria-hidden="true"></i>
       </div>
     )
   }
