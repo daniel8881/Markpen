@@ -1,0 +1,32 @@
+/* CSS declarations go here */
+#login-buttons {
+  margin: 18px;
+  font-size: 14px;
+}
+
+.list-group-item {
+  height: 55px;
+}
+
+.pens-share {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.pens-share .input-group {
+  width: 30%;
+}
+
+.pens-share > div {
+  margin: 0 10px;
+}
+
+.home {
+  background-image: url('/images/bg-index.jpg');
+  height: 100vh;
+  background-size: cover;
+}
