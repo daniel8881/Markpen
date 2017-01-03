@@ -6,11 +6,19 @@ import App from './components/app';
 import PensMain from './components/pens/pens_main';
 import PensList from './components/pens/pens_list';
 import Home from './components/home';
+import LoginPage from './components/auth/loginpage';
+import SignupPage from './components/auth/signuppage';
 
+
+import { isLoggedIn, notLoggedIn } from './components/auth/authIndex';
+ 
 const routes = (
   <Router history={browserHistory}>
-    <Route path='/' component={App}>
-      <IndexRoute component={PensList} />
+    <Route path='login' component={LoginPage} />
+    <Route path='signup' component={SignupPage} />
+    <Route path='/' component={Home} onEnter={isLoggedIn} />
+    <Route path='/u' component={App} onEnter={notLoggedIn}>
+      <Route path='pens' component={PensList} />
       <Route path='pens/:penId' component={PensMain} />
     </Route>
   </Router>

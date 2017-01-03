@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import HeaderIndex from './headerIndex';
 
 class Home extends Component {
+
   render() {
+   
     return (
       <div className='home'>
-        homepage
-        <i class="fa fa-address-book" aria-hidden="true"></i>
+        <HeaderIndex />
+        <h2>HomePage</h2>        
       </div>
     )
   }

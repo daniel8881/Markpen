@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './header';
+import HeaderLogin from './headerLogin';
 
 
 const App = props => {
   return (
     <div>
-      <Header />
+      <HeaderLogin />
       {props.children}
     </div>
   )

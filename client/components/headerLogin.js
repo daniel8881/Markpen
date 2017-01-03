@@ -8,11 +8,12 @@ class Header extends Component {
     
     //meteor method accept last parameter as a callback
     Meteor.call('pens.insert', (err, penId) => {
-      browserHistory.push(`/pens/${penId}`);
+      browserHistory.push(`/u/pens/${penId}`);
     });
   }
 
   render() {
+
     return (
       <nav className='nav navbar-default'>
         <div className='navbar-header'>

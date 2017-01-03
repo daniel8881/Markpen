@@ -11,7 +11,7 @@ class PensList extends Component {
 
   renderList() {
     return this.props.pens.map(pen => {
-      const url = `/pens/${pen._id}`;
+      const url = `/u/pens/${pen._id}`;
       return (
         <li className='list-group-item' key={pen._id}>
           <Link to={url}> {pen.title}</Link>
