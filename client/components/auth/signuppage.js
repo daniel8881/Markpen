@@ -16,7 +16,7 @@ export default class SignupPage extends Component {
     let name = document.getElementById("signup-name").value;
     let email = document.getElementById("signup-email").value;
     let password = document.getElementById("signup-password").value;
-    this.setState({error: "test"});
+    this.setState({error: ""});
     Accounts.createUser({email: email, username: name, password: password}, (err) => {
       if(err){
         this.setState({
@@ -31,11 +31,12 @@ export default class SignupPage extends Component {
   render(){
     const error = this.state.error;
     return (
-      <div className="modal show">
-        <div className="modal-dialog">
+      <div className='bg'>
+      <div className="show">
+        <div>
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="text-center">Sign up</h1>
+              <h1 className="text-center">Register</h1>
             </div>
             <div className="modal-body">
               { error.length > 0 ?
@@ -59,8 +60,8 @@ export default class SignupPage extends Component {
                 </div>
                 <div className="form-group">
                   <input type="submit" id="login-button"
-                        className="btn btn-lg btn-primary btn-block"
-                        value="Sign Up" />
+                        className="btn btn-lg btn-warning btn-block"
+                        value="Register" />
                 </div>
                 <div className="form-group">
                   <p className="text-center">
@@ -72,6 +73,7 @@ export default class SignupPage extends Component {
             <div className="modal-footer" style={{borderTop: 0}}></div>
           </div>
         </div>
+      </div>
       </div>
     );
   }

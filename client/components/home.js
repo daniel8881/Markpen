@@ -6,9 +6,16 @@ class Home extends Component {
   render() {
    
     return (
-      <div className='home'>
+      <div>
         <HeaderIndex />
-        <h2>HomePage</h2>        
+        <div className='home'>
+          <h3>Online Markdown Editor</h3>
+          <h1>Markpen</h1>  
+          <button type='button' className='btn'>
+            START
+          </button>      
+        </div>
+        
       </div>
     )
   }

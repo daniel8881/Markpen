@@ -15,6 +15,6 @@ Meteor.startup(() => {
     return Pens.find({
       sharedWith: { $elemMatch: { $eq: email }}
     })
-
   })
+
 });

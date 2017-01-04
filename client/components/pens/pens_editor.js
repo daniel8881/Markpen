@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror';
+import { Link } from 'react-router';
 // no assign just excute the code
 import 'codemirror/mode/markdown/markdown';
 
@@ -24,22 +25,26 @@ class PensEditor extends Component {
     })
   }
 
+  
+
   render() {
     const titleInput = (
       <form onSubmit={this.handleTitle.bind(this)}>
-        <label htmlFor='title'>Title:</label>
+        <label htmlFor='title'><h5>Title:</h5></label>
         <input type='text' ref='titleInput' name='title' />
       </form>
     )
     const plainTitle = (
       <div>
-        {this.props.pen.title}
-        <i className="fa fa-pencil-square-o" aria-hidden="true" onClick={() => this.setState({ toggleTitle: false })}></i>
+        <h4>
+          {this.props.pen.title}
+          <i className="fa fa-pencil-square-o clickable" aria-hidden="true" onClick={() => this.setState({ toggleTitle: false })}></i>
+        </h4>
       </div>
     )
     return (
-      <div className='col-xs-8'>
-        <h5>Input</h5>
+      <div className='col-xs-6'>
+        <h3>Input</h3>
         <div>
           {this.state.toggleTitle ? plainTitle : titleInput}
         </div>
@@ -47,6 +52,8 @@ class PensEditor extends Component {
           value={this.props.pen.content}
           onChange={this.onEditorChange.bind(this)}
           options={{ mode: 'markdown', lineNumbers: true }} />
+        <Link className="btn btn-success" to='/u/pens'>SAVE</Link>
+       
       </div>
     )
   }

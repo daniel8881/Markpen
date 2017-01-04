@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import Accounts from './accounts';
 import { Link, browserHistory } from 'react-router';
+import { createContainer } from 'meteor/react-meteor-data';
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName: ''
+    }
+  }
+
+
   onPenClick(e) {
     e.preventDefault();
     
@@ -12,20 +21,32 @@ class Header extends Component {
     });
   }
 
-  render() {
+  logout(e) {
+    e.preventDefault();
+    Meteor.logout(() => {
+      browserHistory.push('/');
+    }); 
+  }
 
+  render() {
+    const { user } = this.props;
     return (
       <nav className='nav navbar-default'>
         <div className='navbar-header'>
-          <Link to='/' className='navbar-brand'>Markpen</Link>
+          <Link to='/' className='navbar-brand'>
+            <img src='/images/markpen_logo.svg' className='logo' />
+          </Link>
         </div>
-        <ul className='nav navbar-nav'>
+        <ul className='nav nav-pills pull-right login'>
           <li>
             <a href="#" onClick={this.onPenClick.bind(this)}>Create Pen</a>
           </li>
-        </ul>
-        <ul className='nav nav-pills pull-right login'>
-          <Accounts />
+          <li>
+            <a>Hi { user ? user.username : ''}</a>
+          </li>
+          <li>
+            <a href="#" onClick={this.logout.bind(this)}>Logout</a>
+          </li>
         </ul>
         
       </nav>
@@ -33,4 +54,8 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default createContainer(() => {
+  return {
+    user: Meteor.user()
+  };
+}, Header);

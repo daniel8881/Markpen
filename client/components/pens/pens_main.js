@@ -9,7 +9,7 @@ class PensMain extends Component {
   render() {
     if(!this.props.pen) { return <div>Loading...</div>; }
     return (
-      <div>
+      <div className='penmain'>
         <PensEditor pen={this.props.pen} />
         <PensViewer pen={this.props.pen} />
         <PensShare pen={this.props.pen} />

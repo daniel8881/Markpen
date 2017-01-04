@@ -15,19 +15,19 @@ class Header extends Component {
     return (
       <nav className='nav navbar-default'>
         <div className='navbar-header'>
-          <Link to='/' className='navbar-brand'>Markpen</Link>
+          <Link to='/' className='navbar-brand'>
+            <img src='/images/markpen_logo.svg' className='logo'/>
+          </Link>
         </div>
-        <ul className='nav navbar-nav'>
+        <ul className='nav navbar-nav pull-right'>
           <li>
             <a href="#" onClick={this.onPenClick.bind(this)}>Create Pen</a>
           </li>
-        </ul>
-        <ul className='nav navbar-nav pull-right'>
           <li>
             <Link to='/login'>Login</Link>
           </li>
           <li>
-            <Link to='/signup'>Signup</Link>
+            <Link to='/signup'>Register</Link>
           </li>
         </ul>
       </nav>

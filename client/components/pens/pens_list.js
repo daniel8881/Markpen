@@ -16,12 +16,10 @@ class PensList extends Component {
         <li className='list-group-item' key={pen._id}>
           <Link to={url}> {pen.title}</Link>
           <span className='pull-right'>
-            <button
-              className='btn btn-danger'
-              onClick={() => this.onPenRemove(pen)}>
-              Remove
-            </button>
-
+            <Link to={url}>
+              <i className="fa fa-pencil fa-lg clickable" aria-hidden="true"></i>
+            </Link>
+            <i onClick={() => this.onPenRemove(pen)} className="fa fa-trash fa-lg clickable" aria-hidden="true"></i>
           </span>
         </li>
       )
@@ -30,9 +28,11 @@ class PensList extends Component {
 
   render() {
     return (
-      <ul className='list-group'>
-        {this.renderList()}
-      </ul>
+        <div className='container'>
+          <ul className='list-group'>
+            {this.renderList()}
+          </ul>
+        </div>
     )
   }
 }
