@@ -4,6 +4,12 @@ import { Pens } from '../../../imports/collections/pens';
 import { Link } from 'react-router';
 // why use fat arrow function onClick
 // each button will create a function and pass unique pen into it
+const DefaultContent = props => {
+  return (
+    <h1>Let's create a Pen</h1>
+  )
+}
+
 class PensList extends Component {
   onPenRemove(pen) {
     Meteor.call('pens.remove', pen);
@@ -29,9 +35,11 @@ class PensList extends Component {
   render() {
     return (
         <div className='container'>
+          {
+            this.props.pens.length > 0 ?  null : <DefaultContent />
+          }
           <ul className='list-group'>
-            {this.renderList()}
-          </ul>
+            {this.renderList()}          </ul>
         </div>
     )
   }
