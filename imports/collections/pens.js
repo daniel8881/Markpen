@@ -10,7 +10,7 @@ Meteor.methods({
       content: '',
       sharedWith: [],
       ownerId: this.userId,
-      title: ''
+      title: 'Document Name'
     });
   },
 

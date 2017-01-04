@@ -9,6 +9,10 @@ a:hover {
   margin-left: 9px;
 }
 
+.colorwhite {
+  color: #fff;
+}
+
 .CodeMirror {
   height: 420px;
 }
@@ -85,6 +89,10 @@ a:hover {
   padding: 20px;
 }
 
+.save {
+  margin-top: 10px;
+}
+
 
 /* accounts */
 
@@ -103,18 +111,40 @@ a:hover {
 
 .pens-share {
   position: absolute;
-  bottom: 20px;
-  width: 100%;
+  top: 40%;
+  left: -220px;
+  width: 220px;
+  background: rgba(0, 0, 0, .7);
   display: flex;
   align-items: center;
-  margin: 10px;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 9999999;
+  transition: all .2s ease-in;
 }
 
-.pens-share .input-group {
-  width: 30%;
+.showModal {
+  left: 0;
 }
 
-.pens-share > div {
-  margin: 0 10px;
+.pens-share::after {
+  content: '\f064';
+  font-family: FontAwesome;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: -25px;
+  width: 25px;
+  height: 30px;
+  background: rgba(0,0,0,.7);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #fff;
+
 }
 
+
+.pens-share ul {
+  opacity: 1;
+}

@@ -30,7 +30,7 @@ class PensEditor extends Component {
   render() {
     const titleInput = (
       <form onSubmit={this.handleTitle.bind(this)}>
-        <label htmlFor='title'><h5>Title:</h5></label>
+        <label htmlFor='title'><h5>Title: </h5></label>
         <input type='text' ref='titleInput' name='title' />
       </form>
     )
@@ -52,7 +52,7 @@ class PensEditor extends Component {
           value={this.props.pen.content}
           onChange={this.onEditorChange.bind(this)}
           options={{ mode: 'markdown', lineNumbers: true }} />
-        <Link className="btn btn-success" to='/u/pens'>SAVE</Link>
+        <Link className="btn btn-warning save" to='/u/pens'>SAVE</Link>
        
       </div>
     )
