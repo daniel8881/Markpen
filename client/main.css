@@ -1,4 +1,8 @@
 /* gloabl */
+body {
+  background-color: black;
+}
+
 a:hover {
   text-decoration: none;
 }
