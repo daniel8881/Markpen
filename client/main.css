@@ -3,6 +3,10 @@ body {
   background-color: black;
 }
 
+a {
+  color: black;
+}
+
 a:hover {
   text-decoration: none;
 }
